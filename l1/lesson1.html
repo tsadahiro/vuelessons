@@ -1,0 +1,29 @@
+<html>
+  
+  <head>
+    <title>Lesson1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  
+  <body>
+
+    <div id="app">
+
+      <button @click="extend()"> ボタン </button>
+      <h1> {{ msg }} </h1>
+
+      <svg width=800 height=800>
+	<circle 
+	  v-for="(p,i) in pos"
+	  @click="move(i)"
+	  :cx="p.x*100" :cy=400 r=50 :fill="color" stroke="black" fill-opacity="0.5">
+	</circle>
+      </svg>
+
+    </div>
+
+  
+    <script src="lesson1.js"></script>
+  </body>
+  
+</html>

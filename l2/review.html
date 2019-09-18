@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+
+    <div id="app">
+      <svg width=800 height=800>
+	<g v-for="(Y,i) in conf">
+	  <rect v-for="(x,j) in Y"
+	    @click="change(i,j)"
+	    :x="j*100+400" :y="i*100+400" width=100 height=100
+	    :fill="x==0? 'pink' : 'cyan'" stroke="black">
+	  </rect>
+	</g>
+      </svg>
+    </div>
+
+    <script src="review.js"></script>
+    
+  </body>
+</html>
