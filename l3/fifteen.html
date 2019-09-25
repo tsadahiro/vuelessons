@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title> 15 puzzle </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <svg width=400 height=400>
+	<g v-for="(row,i) in conf">
+	  <circle 
+	    v-for="(c,j) in row" r="50"
+	    v-if="c!=' '"
+	    @click="move(i,j)"
+	    :cx="50+j*100" :cy="50+i*100"
+	    fill="skyblue" stroke="black"> </circle>
+	  <text v-for="(c,j) in row" 
+		  :x="50+j*100" :y="50+i*100"> {{c}}</text>
+	</g>
+      </svg>
+      <div>
+	<button @click="shuffle"> シャッフル </button>
+      </div>
+    </div>
+    <script src="fifteen.js"></script>
+  </body>
+</html>
+  
